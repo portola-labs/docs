@@ -1,20 +1,14 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "maple",
-  "appearance": "light",
+  "appearance": {
+    "default": "light"
+  },
   "name": "Buddy",
   "colors": {
     "primary": "#6366F1",
     "light": "#818CF8",
-    "dark": "#4F46E5",
-    "background": {
-      "light": "#FAFBFC",
-      "dark": "#0F1117"
-    },
-    "anchors": {
-      "from": "#6366F1",
-      "to": "#EC4899"
-    }
+    "dark": "#4F46E5"
   },
   "favicon": "/favicon.svg",
   "navigation": {
