@@ -1,0 +1,129 @@
+---
+title: "Activity Log"
+description: "Track all changes and actions in your organization"
+---
+
+The Activity Log provides a complete audit trail of everything that happens in your Buddy organization.
+
+## Overview
+
+Every action in Buddy is recorded, giving you:
+
+- **Full Transparency** - See who did what and when
+- **Audit Trail** - Track changes for compliance
+- **Troubleshooting** - Understand what happened and why
+
+## Accessing the Activity Log
+
+Navigate to **Activity Log** in the sidebar to see the full history, or view activity inline on:
+
+- **Customer profiles** - See changes to that customer
+- **Order details** - See order history
+- **Product pages** - See catalog changes
+
+## What's Tracked
+
+<CardGroup cols={2}>
+  <Card title="User Actions" icon="user" color="#6366F1">
+    Manual changes by team members
+  </Card>
+  <Card title="System Events" icon="robot" color="#10B981">
+    Automatic syncs and processing
+  </Card>
+  <Card title="Integration Activity" icon="plug" color="#F59E0B">
+    Shopify, QuickBooks, and email imports
+  </Card>
+  <Card title="API Requests" icon="code" color="#8B5CF6">
+    Changes made via the API
+  </Card>
+</CardGroup>
+
+### Order Activity
+
+| Event | Description |
+|-------|-------------|
+| `order.created` | New order created |
+| `order.updated` | Order details changed |
+| `order.status_changed` | Status moved (Draft → Pending → Completed) |
+| `order.line_item_added` | Product added to order |
+| `order.line_item_removed` | Product removed from order |
+| `order.invoiced` | Invoice generated |
+
+### Customer Activity
+
+| Event | Description |
+|-------|-------------|
+| `customer.created` | New customer account |
+| `customer.updated` | Profile changes |
+| `customer.tier_changed` | Pricing tier updated |
+| `customer.location_added` | New shipping address |
+| `customer.merged` | Duplicate accounts combined |
+
+### Product Activity
+
+| Event | Description |
+|-------|-------------|
+| `product.created` | New product added |
+| `product.updated` | Details changed |
+| `product.price_changed` | Pricing updated |
+| `product.variant_added` | New variant created |
+| `product.discontinued` | Product marked inactive |
+
+### Integration Activity
+
+| Event | Description |
+|-------|-------------|
+| `sync.started` | Integration sync began |
+| `sync.completed` | Sync finished successfully |
+| `sync.failed` | Sync encountered an error |
+| `import.processed` | Email PO processed |
+
+## Filtering the Log
+
+Use filters to find specific activity:
+
+<Steps>
+  <Step title="Select Date Range">
+    Choose a time period to narrow results
+  </Step>
+  <Step title="Filter by Type">
+    Select specific event types (orders, customers, etc.)
+  </Step>
+  <Step title="Filter by User">
+    See actions by a specific team member
+  </Step>
+  <Step title="Search">
+    Search for specific records or keywords
+  </Step>
+</Steps>
+
+## Activity Details
+
+Each activity entry shows:
+
+- **Timestamp** - When the action occurred
+- **User** - Who performed it (or "System" for automatic events)
+- **Action** - What was done
+- **Record** - Link to the affected item
+- **Changes** - Before and after values (for updates)
+
+<Tip>
+Click any activity entry to see full details, including all fields that changed.
+</Tip>
+
+## Exporting Activity
+
+You can export activity logs for compliance or analysis:
+
+1. Set your filters to the desired activity
+2. Click **Export** in the top right
+3. Choose CSV or Excel format
+4. Download the file
+
+## Retention
+
+Activity logs are retained indefinitely and cannot be deleted. This ensures you always have a complete audit trail for your business records.
+
+<Note>
+Activity logs count toward your storage quota on some plans. Contact support if you need extended retention options.
+</Note>

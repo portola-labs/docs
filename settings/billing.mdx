@@ -1,0 +1,228 @@
+---
+title: "Billing & Subscription"
+description: "Manage your subscription plan and payment methods"
+---
+
+Manage your Buddy subscription, view usage, and update payment information.
+
+## Accessing Billing
+
+Navigate to **Settings → Billing** from the sidebar.
+
+<Note>
+Only users with Admin role can view and manage billing settings.
+</Note>
+
+## Subscription Plans
+
+<CardGroup cols={3}>
+  <Card title="Starter" icon="seedling" color="#10B981">
+    For small businesses getting started
+  </Card>
+  <Card title="Growth" icon="chart-line" color="#6366F1">
+    For growing wholesale operations
+  </Card>
+  <Card title="Enterprise" icon="building" color="#8B5CF6">
+    For large-scale distributors
+  </Card>
+</CardGroup>
+
+### Plan Comparison
+
+| Feature | Starter | Growth | Enterprise |
+|---------|:-------:|:------:|:----------:|
+| Team Members | Up to 3 | Up to 10 | Unlimited |
+| Customers | Up to 100 | Up to 500 | Unlimited |
+| Products | Up to 500 | Up to 2,000 | Unlimited |
+| Orders/Month | Up to 200 | Up to 1,000 | Unlimited |
+| Email PO Processing | 50/month | 200/month | Unlimited |
+| Integrations | 1 | All | All |
+| API Access | ✗ | ✓ | ✓ |
+| Priority Support | ✗ | ✓ | ✓ |
+| Custom Onboarding | ✗ | ✗ | ✓ |
+
+## Current Plan
+
+Your billing dashboard shows:
+
+- **Plan Name** - Your current subscription tier
+- **Billing Cycle** - Monthly or annual
+- **Next Billing Date** - When your next payment is due
+- **Amount** - What you'll be charged
+
+## Usage Overview
+
+Track your usage against plan limits:
+
+<Steps>
+  <Step title="Team Members">
+    Current users vs. plan limit
+  </Step>
+  <Step title="Customers">
+    Active customer accounts vs. limit
+  </Step>
+  <Step title="Products">
+    Catalog items vs. limit
+  </Step>
+  <Step title="Orders">
+    Orders this billing cycle vs. limit
+  </Step>
+  <Step title="Email Credits">
+    PO processing credits remaining
+  </Step>
+</Steps>
+
+<Warning>
+When you reach a limit, you'll be prompted to upgrade or some features may be restricted until the next billing cycle.
+</Warning>
+
+## Credit System
+
+Email PO processing uses a credit system:
+
+| Action | Credits Used |
+|--------|--------------|
+| Email received & parsed | 1 credit |
+| Order created from email | Included |
+| Failed parsing (retry) | No charge |
+
+### Buying Additional Credits
+
+If you run out of credits before your billing cycle resets:
+
+1. Go to **Settings → Billing**
+2. Click **Buy Credits**
+3. Select a credit pack
+4. Complete payment
+
+Credit packs don't expire and roll over between billing cycles.
+
+## Upgrading Your Plan
+
+To upgrade to a higher tier:
+
+<Steps>
+  <Step title="Review Plans">
+    Click **Change Plan** to see options
+  </Step>
+  <Step title="Select New Plan">
+    Choose the plan that fits your needs
+  </Step>
+  <Step title="Confirm Upgrade">
+    Review prorated charges and confirm
+  </Step>
+  <Step title="Access New Features">
+    New limits and features apply immediately
+  </Step>
+</Steps>
+
+### Prorated Billing
+
+When you upgrade mid-cycle:
+- You're charged the difference for remaining days
+- New limits apply immediately
+- Next full charge at regular billing date
+
+## Downgrading Your Plan
+
+<Warning>
+Before downgrading, ensure your usage is within the new plan's limits.
+</Warning>
+
+To downgrade:
+
+1. Click **Change Plan**
+2. Select the lower tier
+3. Review what you'll lose access to
+4. Confirm the downgrade
+
+Downgrades take effect at the next billing cycle. You keep current access until then.
+
+## Payment Methods
+
+### Adding a Payment Method
+
+1. Click **Add Payment Method**
+2. Enter card details or connect bank account
+3. Verify the payment method
+4. Set as default (optional)
+
+### Accepted Payment Methods
+
+- Credit cards (Visa, Mastercard, American Express)
+- Debit cards
+- ACH bank transfer (US only)
+
+### Updating Payment Method
+
+1. Find the payment method in the list
+2. Click **Edit** to update details
+3. Or click **Remove** to delete it
+
+<Note>
+You must have at least one valid payment method on file to maintain your subscription.
+</Note>
+
+## Billing History
+
+View all past invoices and payments:
+
+| Column | Description |
+|--------|-------------|
+| **Date** | Invoice date |
+| **Description** | What you were charged for |
+| **Amount** | Payment amount |
+| **Status** | Paid, Pending, or Failed |
+| **Invoice** | Download PDF |
+
+### Downloading Invoices
+
+Click the **Download** button next to any invoice to get a PDF for your records.
+
+## Tax Information
+
+### Adding Tax ID
+
+For business tax purposes:
+
+1. Click **Edit Tax Info**
+2. Enter your Tax ID / VAT number
+3. Save changes
+
+Your Tax ID will appear on future invoices.
+
+### Tax Exemption
+
+If your organization is tax-exempt:
+
+1. Click **Upload Tax Exemption**
+2. Upload your exemption certificate
+3. Our team will review and apply it
+
+## Canceling Your Subscription
+
+To cancel your Buddy subscription:
+
+1. Click **Cancel Subscription**
+2. Select your reason for canceling
+3. Confirm cancellation
+
+When you cancel:
+- Access continues until the end of your billing period
+- Data is retained for 30 days after cancellation
+- You can reactivate anytime during the retention period
+
+<Tip>
+Consider downgrading instead of canceling—you can always upgrade again later without losing your data.
+</Tip>
+
+## Need Help?
+
+<CardGroup cols={2}>
+  <Card title="Contact Support" icon="headset" href="mailto:support@usebuddy.io" color="#6366F1">
+    Questions about billing or plans
+  </Card>
+  <Card title="Sales Inquiry" icon="phone" href="mailto:sales@usebuddy.io" color="#10B981">
+    Custom enterprise pricing
+  </Card>
+</CardGroup>

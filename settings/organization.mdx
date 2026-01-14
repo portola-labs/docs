@@ -1,0 +1,171 @@
+---
+title: "Organization Settings"
+description: "Configure your company profile and preferences"
+---
+
+Organization settings control your company profile, branding, and system-wide preferences.
+
+## Accessing Settings
+
+Navigate to **Settings → Organization** from the sidebar.
+
+<Note>
+Only users with Admin role can modify organization settings.
+</Note>
+
+## Company Profile
+
+### Basic Information
+
+Configure your company details:
+
+| Field | Description |
+|-------|-------------|
+| **Company Name** | Your business name (shown on invoices) |
+| **Legal Name** | Official registered name |
+| **Address** | Primary business address |
+| **Phone** | Main contact number |
+| **Email** | Primary contact email |
+| **Website** | Your company website |
+
+### Business Details
+
+| Field | Description |
+|-------|-------------|
+| **Industry** | Your business sector |
+| **Tax ID** | Business tax identification number |
+| **Currency** | Default currency for pricing |
+| **Timezone** | Your business timezone |
+
+## Branding
+
+Customize how Buddy represents your business:
+
+<CardGroup cols={2}>
+  <Card title="Logo" icon="image" color="#6366F1">
+    Upload your company logo for invoices and documents
+  </Card>
+  <Card title="Colors" icon="palette" color="#EC4899">
+    Set brand colors for generated documents
+  </Card>
+</CardGroup>
+
+### Logo Requirements
+
+- **Format**: PNG, JPG, or SVG
+- **Size**: Minimum 200x200 pixels
+- **File Size**: Maximum 2MB
+
+Your logo appears on:
+- Generated invoices
+- Email communications
+- Exported documents
+
+## Preferences
+
+### Order Settings
+
+| Setting | Description |
+|---------|-------------|
+| **Default Order Status** | Initial status for new orders |
+| **Order Number Prefix** | Custom prefix (e.g., "SO-") |
+| **Require PO Number** | Whether orders need a PO reference |
+| **Auto-generate Invoice** | Create invoice when order completes |
+
+### Product Settings
+
+| Setting | Description |
+|---------|-------------|
+| **Default Unit** | Default unit of measure |
+| **Show SKU** | Display SKU in product lists |
+| **Price Decimal Places** | Precision for pricing (2-4) |
+
+### Customer Settings
+
+| Setting | Description |
+|---------|-------------|
+| **Default Pricing Tier** | Tier for new customers |
+| **Require Phone** | Whether phone is required |
+| **Require Address** | Whether address is required |
+
+## Pricing Tiers
+
+Manage your customer pricing tiers:
+
+<Steps>
+  <Step title="Add Tier">
+    Click **Add Tier** to create a new pricing level
+  </Step>
+  <Step title="Configure Discount">
+    Set the default discount percentage for this tier
+  </Step>
+  <Step title="Set Priority">
+    Arrange tiers in order of discount (lowest to highest)
+  </Step>
+</Steps>
+
+### Common Tier Examples
+
+| Tier | Typical Discount |
+|------|------------------|
+| Retail | 0% (base price) |
+| Wholesale | 20-30% |
+| Distributor | 30-40% |
+| VIP | 40-50% |
+
+<Tip>
+You can override tier pricing for individual products or customers from their respective pages.
+</Tip>
+
+## Notifications
+
+Configure organization-wide notification preferences:
+
+| Notification | Options |
+|--------------|---------|
+| **New Order** | Email, Slack, or both |
+| **Order Status Change** | Email, Slack, or both |
+| **Review Items** | Email, Slack, or both |
+| **Integration Errors** | Email, Slack, or both |
+
+## Data & Privacy
+
+### Data Export
+
+Export all your organization data:
+
+1. Click **Export All Data**
+2. Select what to include (customers, products, orders)
+3. Choose format (CSV or JSON)
+4. Download the archive
+
+### Data Retention
+
+Configure how long to keep certain data:
+
+| Data Type | Default Retention |
+|-----------|-------------------|
+| Activity Logs | Indefinite |
+| Deleted Records | 30 days |
+| Import History | 90 days |
+
+## Danger Zone
+
+<Warning>
+These actions are irreversible. Proceed with caution.
+</Warning>
+
+### Delete Organization
+
+Permanently delete your organization and all data:
+
+1. Click **Delete Organization**
+2. Type your organization name to confirm
+3. Enter your password
+4. Click **Permanently Delete**
+
+This action:
+- Deletes all customers, products, orders, and invoices
+- Disconnects all integrations
+- Removes all team members
+- Cannot be undone

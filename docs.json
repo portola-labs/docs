@@ -1,12 +1,20 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "quill",
   "appearance": "light",
   "name": "Buddy",
   "colors": {
-    "primary": "#2563EB",
-    "light": "#3B82F6",
-    "dark": "#1D4ED8"
+    "primary": "#6366F1",
+    "light": "#818CF8",
+    "dark": "#4F46E5",
+    "background": {
+      "light": "#FAFBFC",
+      "dark": "#0F1117"
+    },
+    "anchors": {
+      "from": "#6366F1",
+      "to": "#EC4899"
+    }
   },
   "favicon": "/favicon.svg",
   "navigation": {
@@ -25,6 +33,7 @@
           {
             "group": "Core Features",
             "pages": [
+              "features/dashboard",
               "features/customers",
               "features/products",
               "features/orders",
@@ -37,6 +46,7 @@
             "pages": [
               "features/warehouses",
               "features/data-reviews",
+              "features/activity-log",
               "features/import-export"
             ]
           },
@@ -48,6 +58,14 @@
               "integrations/quickbooks",
               "integrations/slack",
               "integrations/email-forwarding"
+            ]
+          },
+          {
+            "group": "Settings",
+            "pages": [
+              "settings/organization",
+              "settings/team",
+              "settings/billing"
             ]
           }
         ]
@@ -79,6 +97,11 @@
           "anchor": "Support",
           "href": "mailto:support@usebuddy.io",
           "icon": "envelope"
+        },
+        {
+          "anchor": "Open Buddy",
+          "href": "https://app.usebuddy.io",
+          "icon": "arrow-up-right-from-square"
         }
       ]
     }
@@ -104,5 +127,13 @@
     "socials": {
       "linkedin": "https://linkedin.com/company/usebuddy"
     }
+  },
+  "backgroundImage": "/images/background.png",
+  "feedback": {
+    "thumbsRating": true,
+    "suggestEdit": true
+  },
+  "search": {
+    "prompt": "Search documentation..."
   }
 }

@@ -1,0 +1,160 @@
+---
+title: "Team Management"
+description: "Invite team members and manage permissions"
+---
+
+Manage your team members, their roles, and access permissions.
+
+## Accessing Team Settings
+
+Navigate to **Settings → Team** from the sidebar.
+
+## Team Members
+
+View all users in your organization:
+
+| Column | Description |
+|--------|-------------|
+| **Name** | Team member's full name |
+| **Email** | Login email address |
+| **Role** | Permission level |
+| **Status** | Active, Pending, or Inactive |
+| **Last Active** | Most recent login |
+
+## Inviting Team Members
+
+<Steps>
+  <Step title="Click Invite Member">
+    Click the **Invite Member** button
+  </Step>
+  <Step title="Enter Email">
+    Enter the person's email address
+  </Step>
+  <Step title="Select Role">
+    Choose their permission level
+  </Step>
+  <Step title="Send Invitation">
+    Click **Send Invite** to email them
+  </Step>
+</Steps>
+
+The invited person will receive an email with a link to:
+1. Create their account (if new to Buddy)
+2. Accept the invitation
+3. Access your organization
+
+<Note>
+Invitations expire after 7 days. You can resend them from the Team page.
+</Note>
+
+## User Roles
+
+<CardGroup cols={3}>
+  <Card title="Admin" icon="crown" color="#F59E0B">
+    Full access to everything
+  </Card>
+  <Card title="Editor" icon="pen" color="#6366F1">
+    Create and edit records
+  </Card>
+  <Card title="Viewer" icon="eye" color="#10B981">
+    Read-only access
+  </Card>
+</CardGroup>
+
+### Role Permissions
+
+| Permission | Admin | Editor | Viewer |
+|------------|:-----:|:------:|:------:|
+| View customers | ✓ | ✓ | ✓ |
+| View products | ✓ | ✓ | ✓ |
+| View orders | ✓ | ✓ | ✓ |
+| Create orders | ✓ | ✓ | ✗ |
+| Edit orders | ✓ | ✓ | ✗ |
+| Create customers | ✓ | ✓ | ✗ |
+| Edit customers | ✓ | ✓ | ✗ |
+| Create products | ✓ | ✓ | ✗ |
+| Edit products | ✓ | ✓ | ✗ |
+| Manage pricing | ✓ | ✓ | ✗ |
+| Resolve reviews | ✓ | ✓ | ✗ |
+| View settings | ✓ | ✗ | ✗ |
+| Edit settings | ✓ | ✗ | ✗ |
+| Manage team | ✓ | ✗ | ✗ |
+| Manage billing | ✓ | ✗ | ✗ |
+| Connect integrations | ✓ | ✗ | ✗ |
+| Delete records | ✓ | ✗ | ✗ |
+
+## Changing Roles
+
+To change a team member's role:
+
+1. Find them in the team list
+2. Click the **Role** dropdown
+3. Select the new role
+4. Confirm the change
+
+<Warning>
+Demoting yourself from Admin requires at least one other Admin in the organization.
+</Warning>
+
+## Removing Team Members
+
+To remove someone from your organization:
+
+1. Find them in the team list
+2. Click the **⋯** menu
+3. Select **Remove from organization**
+4. Confirm the removal
+
+When removed:
+- They lose access immediately
+- Their past activity remains in the log
+- They can be re-invited later
+
+## Pending Invitations
+
+View and manage outstanding invitations:
+
+| Action | Description |
+|--------|-------------|
+| **Resend** | Send another invitation email |
+| **Copy Link** | Copy the invite link directly |
+| **Cancel** | Revoke the invitation |
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Principle of Least Privilege" icon="shield" color="#6366F1">
+    Give users only the access they need for their role
+  </Card>
+  <Card title="Multiple Admins" icon="users" color="#10B981">
+    Have at least 2 admins in case one is unavailable
+  </Card>
+</CardGroup>
+
+### Recommended Role Assignments
+
+| Job Function | Recommended Role |
+|--------------|------------------|
+| Business Owner | Admin |
+| Operations Manager | Admin |
+| Sales Representative | Editor |
+| Customer Service | Editor |
+| Accountant | Viewer or Editor |
+| External Auditor | Viewer |
+
+## Activity Tracking
+
+All team member actions are logged in the Activity Log:
+
+- Who made changes
+- When changes were made
+- What was changed
+
+This helps you:
+- Track accountability
+- Debug issues
+- Meet compliance requirements
+
+<Tip>
+Review the Activity Log regularly to ensure team members are following proper procedures.
+</Tip>

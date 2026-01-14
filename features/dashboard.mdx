@@ -1,0 +1,111 @@
+---
+title: "Dashboard"
+description: "Your command center for daily operations"
+---
+
+The Dashboard gives you a complete overview of your business operations at a glance.
+
+## Overview
+
+<img
+  className="rounded-xl border"
+  src="/images/dashboard-overview.png"
+  alt="Buddy Dashboard Overview"
+/>
+
+When you log in to Buddy, the Dashboard shows you:
+
+- **Pending Reviews** - Items that need your attention
+- **Recent Activity** - Latest changes across your organization
+- **Key Metrics** - Orders, customers, and revenue summaries
+
+## Pending Reviews
+
+<CardGroup cols={2}>
+  <Card title="Data Quality Items" icon="clipboard-check" color="#F59E0B">
+    Customer and product matches that need confirmation
+  </Card>
+  <Card title="Order Reviews" icon="file-invoice" color="#EC4899">
+    Orders with line items that need manual review
+  </Card>
+</CardGroup>
+
+The pending reviews section shows items that require your attention before they can be processed. Each item displays:
+
+- **Type** - What kind of review (match confirmation, missing data, etc.)
+- **Priority** - Urgent, High, Normal, or Low
+- **Age** - How long the item has been waiting
+- **Quick Actions** - Approve, reject, or view details
+
+<Tip>
+Address high-priority items first to keep your order processing flowing smoothly.
+</Tip>
+
+## Activity Feed
+
+The activity feed shows recent actions across your organization:
+
+| Activity Type | Description |
+|--------------|-------------|
+| **Orders** | New orders created, status changes, edits |
+| **Customers** | New accounts, updates, tier changes |
+| **Products** | Catalog changes, pricing updates |
+| **Integrations** | Sync events, import completions |
+| **Team** | User actions, permission changes |
+
+### Filtering Activity
+
+You can filter the activity feed by:
+- **Time range** - Today, this week, this month
+- **Activity type** - Orders, customers, products, etc.
+- **Team member** - See what specific users have done
+
+## Metrics Overview
+
+<CardGroup cols={3}>
+  <Card title="Orders This Month" icon="shopping-cart" color="#6366F1">
+    Total orders and revenue
+  </Card>
+  <Card title="Active Customers" icon="users" color="#10B981">
+    Customers with recent orders
+  </Card>
+  <Card title="Products Sold" icon="box" color="#8B5CF6">
+    Units moved this period
+  </Card>
+</CardGroup>
+
+The metrics section provides quick insights into your business performance:
+
+- **Order Count** - Number of orders in the selected period
+- **Revenue** - Total order value
+- **Average Order Value** - Revenue divided by order count
+- **Top Customers** - Your most active accounts
+- **Top Products** - Best-selling items
+
+## Quick Actions
+
+From the Dashboard, you can quickly:
+
+<Steps>
+  <Step title="Create New Order">
+    Click **New Order** to start a sales order
+  </Step>
+  <Step title="Add Customer">
+    Click **Add Customer** to create a new account
+  </Step>
+  <Step title="Review Items">
+    Click any pending review to resolve it
+  </Step>
+</Steps>
+
+## Customization
+
+Your Dashboard remembers your preferences:
+
+- **Default date range** for metrics
+- **Collapsed/expanded** sections
+- **Activity filter** settings
+
+<Note>
+Dashboard preferences are stored per user, so each team member can customize their own view.
+</Note>
