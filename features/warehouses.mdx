@@ -83,14 +83,26 @@ Some products may need to ship from specific locations:
 
 Orders containing this product will route to the specified warehouse.
 
-## How Routing Works
+## How Buddy Assigns Stock Locations
 
-When creating an order, Buddy determines the fulfillment location:
+When you create an order or process a PO, Buddy automatically selects the right warehouse for you:
 
-1. **Product requirement**: If any product requires a specific warehouse, use that
-2. **Customer default**: Otherwise, use the customer's default warehouse
-3. **Organization default**: If neither is set, use the organization's default
-4. **Manual selection**: You can always override when creating the order
+### What Buddy Checks (In Order)
+
+1. **Product requirement first**: If any product on the order requires a specific warehouse, that warehouse is used
+2. **Customer default second**: Otherwise, the customer's assigned warehouse is selected
+3. **Organization default third**: If neither is set, your default warehouse is used
+4. **You can always override**: Select a different warehouse manually if needed
+
+### What You'll See
+
+- **Warehouse auto-selected**: The fulfillment location appears automatically on new orders
+- **Warehouse badge**: Orders show which location they'll ship from
+- **Conflict warning**: If products require different warehouses, you'll be notified
+
+<Tip>
+Set up customer defaults when you first create customer accounts. This saves time on every future order.
+</Tip>
 
 <Note>
 If products in an order require different warehouses, you may need to split the order or handle it manually.

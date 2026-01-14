@@ -76,6 +76,46 @@ Yellow badges indicate missing information:
 | **No Tier** | No pricing tier assigned | Assign appropriate tier |
 | **No Address** | Billing address incomplete | Complete address fields |
 
+## How Buddy Helps You
+
+### Automatic Duplicate Detection
+
+When you add a new customer or import data, Buddy checks for potential duplicates by comparing:
+- Company name (including common variations)
+- Email address
+- Phone number
+- Billing address
+
+**What you'll see:**
+- **Duplicate found**: Buddy warns you and suggests the existing customer
+- **Possible duplicate**: You'll be asked to confirm if it's the same customer
+- **No match**: Customer is created normally
+
+This prevents accidentally creating duplicate accounts for the same customer.
+
+### Price Tier Assignment
+
+When a customer is assigned a pricing tier, all their orders automatically use that tier's pricing:
+
+1. You assign a customer to "Wholesale" tier
+2. When creating orders for this customer, all products show wholesale prices
+3. No manual price adjustments needed
+
+**What you'll see:**
+- Product prices automatically adjust based on the customer's tier
+- Order totals reflect the correct tier discounts
+- You can still override individual prices if needed
+
+### Stock Location Assignment
+
+If you have multiple warehouses, you can assign customers to a default location:
+
+1. You set "East Coast DC" as the customer's default warehouse
+2. When creating orders, that warehouse is automatically selected
+3. Orders route to the correct fulfillment location
+
+This saves time and ensures orders ship from the right place.
+
 ## Integration Sync
 
 Customers from connected integrations show badges indicating their source:

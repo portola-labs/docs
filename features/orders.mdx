@@ -90,16 +90,57 @@ You can create orders automatically by forwarding purchase orders to Buddy.
 
 [Learn more about email forwarding →](/integrations/email-forwarding)
 
-## What to Expect
+## How Buddy Matches For You
 
-When processing orders, Buddy automatically:
+When you forward a purchase order or create an order, Buddy automatically does the heavy lifting:
 
-- **Matches customers**: Identifies the customer from the PO
-- **Matches products**: Finds products by SKU, name, or description
-- **Applies pricing**: Uses the customer's tier pricing
-- **Flags issues**: Creates reviews for items needing attention
+### Customer Matching
 
-Items that can't be matched confidently appear in [Data Reviews](/features/data-reviews).
+Buddy looks at the PO and tries to find the right customer in your system by comparing:
+- Company name
+- Email address
+- Phone number
+- Billing address
+
+**What you'll see:**
+- **Confident match**: The customer is selected automatically
+- **Possible match**: Buddy suggests a customer but asks you to confirm
+- **No match**: You'll be asked to select or create the customer
+
+### Product Matching
+
+For each line item on the PO, Buddy finds the matching product by comparing:
+- SKU or item number
+- Product name
+- Description
+
+**What you'll see:**
+- **Matched**: Product found and added to the order
+- **Possible match**: Buddy suggests a product for you to confirm
+- **Unmatched**: The item needs manual selection
+
+### Automatic Assignments
+
+Once a customer is matched, Buddy automatically applies:
+
+| Setting | How It's Applied |
+|---------|------------------|
+| **Price Tier** | Customer's assigned tier determines all product pricing |
+| **Stock Location** | Customer's default warehouse is selected for fulfillment |
+| **Shipping Address** | Customer's saved locations are available to select |
+| **Payment Terms** | Customer's terms are applied to the order |
+
+<Tip>
+The better your customer and product data, the more accurate automatic matching becomes. Keep SKUs consistent and customer information up to date.
+</Tip>
+
+### When Review Is Needed
+
+Items that can't be matched confidently appear in [Data Reviews](/features/data-reviews). You'll see reviews when:
+- A customer name is similar but not exact
+- A product SKU doesn't exist in your catalog
+- Pricing seems unusual compared to history
+- Required information is missing
 
 ## Editing Orders
 
