@@ -68,26 +68,6 @@
             ]
           }
         ]
-      },
-      {
-        "tab": "API Reference",
-        "groups": [
-          {
-            "group": "API Documentation",
-            "pages": [
-              "api-reference/introduction",
-              "api-reference/authentication"
-            ]
-          },
-          {
-            "group": "Endpoints",
-            "pages": [
-              "api-reference/endpoints/customers",
-              "api-reference/endpoints/products",
-              "api-reference/endpoints/orders"
-            ]
-          }
-        ]
       }
     ],
     "global": {
