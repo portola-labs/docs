@@ -93,11 +93,6 @@
     "global": {
       "anchors": [
         {
-          "anchor": "Support",
-          "href": "mailto:support@usebuddy.io",
-          "icon": "envelope"
-        },
-        {
           "anchor": "Open Buddy",
           "href": "https://app.usebuddy.io",
           "icon": "arrow-up-right-from-square"
