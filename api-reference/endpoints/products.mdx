@@ -1,0 +1,162 @@
+---
+title: "Products API"
+description: "Manage your product catalog"
+---
+
+## List Products
+
+Retrieve a paginated list of products.
+
+```bash
+GET /v1/products
+```
+
+### Query Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `page` | integer | Page number (default: 1) |
+| `pageSize` | integer | Results per page (default: 20, max: 100) |
+| `search` | string | Search by name or SKU |
+| `status` | string | Filter by status |
+
+### Response
+
+```json
+{
+  "data": [
+    {
+      "id": "prod_abc123",
+      "name": "Classic T-Shirt",
+      "description": "Comfortable cotton t-shirt",
+      "status": "active",
+      "variants": [
+        {
+          "id": "var_xyz789",
+          "sku": "TSHIRT-BLU-L",
+          "name": "Blue / Large",
+          "unitPrice": 29.99,
+          "upcCode": "123456789012"
+        }
+      ],
+      "createdAt": "2024-01-15T10:30:00Z"
+    }
+  ],
+  "pagination": {
+    "page": 1,
+    "pageSize": 20,
+    "total": 500,
+    "totalPages": 25
+  }
+}
+```
+
+## Get Product
+
+Retrieve a single product by ID.
+
+```bash
+GET /v1/products/:id
+```
+
+### Response
+
+```json
+{
+  "data": {
+    "id": "prod_abc123",
+    "name": "Classic T-Shirt",
+    "description": "Comfortable cotton t-shirt",
+    "status": "active",
+    "variants": [
+      {
+        "id": "var_xyz789",
+        "sku": "TSHIRT-BLU-L",
+        "name": "Blue / Large",
+        "unitPrice": 29.99,
+        "unitLevel": "EACH",
+        "upcCode": "123456789012"
+      },
+      {
+        "id": "var_xyz790",
+        "sku": "TSHIRT-BLU-M",
+        "name": "Blue / Medium",
+        "unitPrice": 29.99,
+        "unitLevel": "EACH",
+        "upcCode": "123456789013"
+      }
+    ],
+    "createdAt": "2024-01-15T10:30:00Z",
+    "updatedAt": "2024-01-20T14:22:00Z"
+  }
+}
+```
+
+## Create Product
+
+Create a new product with variants.
+
+```bash
+POST /v1/products
+```
+
+### Request Body
+
+```json
+{
+  "name": "Classic T-Shirt",
+  "description": "Comfortable cotton t-shirt",
+  "variants": [
+    {
+      "sku": "TSHIRT-BLU-L",
+      "name": "Blue / Large",
+      "unitPrice": 29.99,
+      "unitLevel": "EACH"
+    }
+  ]
+}
+```
+
+## Update Product
+
+Update an existing product.
+
+```bash
+PATCH /v1/products/:id
+```
+
+### Request Body
+
+```json
+{
+  "name": "Premium T-Shirt",
+  "description": "Updated description"
+}
+```
+
+## Add Variant
+
+Add a variant to an existing product.
+
+```bash
+POST /v1/products/:id/variants
+```
+
+### Request Body
+
+```json
+{
+  "sku": "TSHIRT-RED-L",
+  "name": "Red / Large",
+  "unitPrice": 29.99,
+  "unitLevel": "EACH"
+}
+```
+
+## Delete Product
+
+Delete a product. Products with order history cannot be deleted.
+
+```bash
+DELETE /v1/products/:id
+```

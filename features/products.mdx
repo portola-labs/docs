@@ -1,0 +1,117 @@
+---
+title: "Product Catalog"
+description: "Managing products, variants, and SKUs"
+---
+
+The Products section is where you manage your product catalog, including variants, SKUs, and pricing.
+
+## Understanding Products and Variants
+
+Buddy uses a two-level product structure:
+
+- **Product**: The main item (e.g., "Classic T-Shirt")
+- **Variant**: Specific versions with their own SKU and price (e.g., "Classic T-Shirt - Blue, Large")
+
+Each variant is what actually gets ordered and has its own:
+- SKU
+- UPC/Barcode
+- Price
+- Unit level (Each, Pack, Case, Pallet)
+
+## Viewing Products
+
+Navigate to **Products** in the sidebar. You can:
+- **Search**: By name, SKU, or UPC
+- **Filter**: By status, category, or integration
+- **Expand**: Click the arrow to see variants
+
+## Adding a Product
+
+<Steps>
+  <Step title="Click New Product">
+    Click **New Product** in the top right
+  </Step>
+  <Step title="Enter Product Details">
+    Fill in the product name and description
+  </Step>
+  <Step title="Add Initial Variant">
+    Enter SKU, price, and unit information for the first variant
+  </Step>
+  <Step title="Save">
+    Click **Save** to create the product
+  </Step>
+</Steps>
+
+## Adding Variants
+
+1. Open a product's details (click the expand arrow)
+2. Click **Add Variant**
+3. Enter variant-specific information:
+   - SKU (required)
+   - Price
+   - Unit level
+   - UPC code (optional)
+4. Click **Save**
+
+## Unit Levels
+
+Products can be sold at different unit levels:
+
+| Level | Description | Example |
+|-------|-------------|---------|
+| **Each** | Individual units | 1 bottle |
+| **Pack** | Small groupings | 6-pack |
+| **Case** | Standard shipping cartons | 24 units |
+| **Pallet** | Bulk quantities | 100 cases |
+
+Each unit level can have its own price, allowing quantity-based pricing.
+
+## Editing Prices
+
+Two ways to edit product prices:
+
+1. **Inline editing**: Click directly on the price in the table
+2. **Full edit**: Click the **...** menu → **Edit** for all fields
+
+## Product Fields
+
+| Field | Description |
+|-------|-------------|
+| **Name** | Product display name |
+| **Description** | Product description |
+| **SKU** | Stock keeping unit (per variant) |
+| **UPC** | Universal product code (barcode) |
+| **Price** | Base price (before tier discounts) |
+| **Unit Level** | Each, Pack, Case, or Pallet |
+| **Status** | Active, Discontinued, Seasonal, Draft |
+| **Category** | Product category for organization |
+
+## Integration Sync
+
+Products from connected integrations show source badges:
+
+- **S** (Shopify): Includes Shopify product ID and variant ID
+- **QB** (QuickBooks): Includes QuickBooks Item ID
+- **C** (Cin7): Includes Cin7 product ID
+
+Synced products update automatically when changed in either system.
+
+## Bulk Actions
+
+Select multiple products to:
+- **Export**: Download as CSV
+- **Update Status**: Change status for all selected
+- **Delete**: Remove products (if no order history)
+
+## Importing Products
+
+See [Import & Export](/features/import-export) for details on bulk importing products from CSV or Excel files.
+
+## Tips for Better Matching
+
+To improve automatic matching when processing POs:
+
+1. **Add alternative SKUs**: Include customer-specific SKUs as aliases
+2. **Include UPC codes**: Barcodes help with matching
+3. **Use consistent naming**: Keep product names standardized
+4. **Add common misspellings**: Include variations customers might use

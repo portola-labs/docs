@@ -1,0 +1,151 @@
+---
+title: "Onboarding Guide"
+description: "Complete walkthrough of setting up Buddy for your business"
+---
+
+This guide walks you through the complete onboarding process to get Buddy configured for your business.
+
+## Before You Begin
+
+Have the following ready:
+- Your company information (name, address, contact details)
+- Access to your Shopify and/or QuickBooks accounts (if connecting)
+- Customer and product data files (if importing from spreadsheets)
+
+## Onboarding Steps
+
+### 1. Account Creation
+
+<Steps>
+  <Step title="Sign Up">
+    Visit [app.usebuddy.io](https://app.usebuddy.io) and create your account
+  </Step>
+  <Step title="Verify Email">
+    Click the verification link sent to your email
+  </Step>
+  <Step title="Create Organization">
+    Enter your company name to create your organization
+  </Step>
+</Steps>
+
+### 2. Business Profile
+
+Answer a few questions to help Buddy configure the best experience:
+
+- **Business type**: Wholesale distributor, manufacturer, etc.
+- **Industry**: Food & beverage, apparel, general merchandise, etc.
+- **Volume**: Approximate number of customers and products
+- **Current tools**: What systems you currently use
+
+### 3. Connect Integrations
+
+<AccordionGroup>
+  <Accordion title="Shopify" icon="shopify">
+    Click **Connect Shopify** and authorize access in Shopify. Once connected:
+    - Products sync automatically (including variants and images)
+    - Customers sync with their addresses
+    - Orders from Shopify appear in Buddy
+
+    [Learn more about Shopify integration →](/integrations/shopify)
+  </Accordion>
+
+  <Accordion title="QuickBooks" icon="calculator">
+    Click **Connect QuickBooks** and authorize through Intuit. Once connected:
+    - Customer accounts sync between systems
+    - Invoices created in Buddy appear in QuickBooks
+    - Payment status stays synchronized
+
+    [Learn more about QuickBooks integration →](/integrations/quickbooks)
+  </Accordion>
+
+  <Accordion title="Slack" icon="slack">
+    Click **Connect Slack** and select a channel. Once connected:
+    - Receive notifications for new orders
+    - Get alerts for items needing review
+    - Stay updated without checking Buddy constantly
+
+    [Learn more about Slack integration →](/integrations/slack)
+  </Accordion>
+</AccordionGroup>
+
+<Note>
+You can skip integrations and connect them later from **Settings → Integrations**.
+</Note>
+
+### 4. Import Your Data
+
+If you have existing data not in a connected system:
+
+<Steps>
+  <Step title="Prepare Your File">
+    Export your data as CSV or Excel (.xlsx). Ensure headers are in the first row.
+  </Step>
+  <Step title="Upload">
+    Go to **Customers** or **Products** and click **Import**
+  </Step>
+  <Step title="Map Columns">
+    Match your spreadsheet columns to Buddy fields
+  </Step>
+  <Step title="Review & Import">
+    Preview the data and click **Import** to complete
+  </Step>
+</Steps>
+
+[Learn more about importing data →](/features/import-export)
+
+### 5. Configure Pricing Tiers
+
+If you offer different pricing to different customer groups:
+
+<Steps>
+  <Step title="Create Tiers">
+    Go to **Settings → Pricing Tiers** and create tiers (e.g., Wholesale, Distributor)
+  </Step>
+  <Step title="Set Discounts">
+    Configure the default discount percentage for each tier
+  </Step>
+  <Step title="Assign Customers">
+    Assign customers to appropriate tiers from their profile
+  </Step>
+</Steps>
+
+[Learn more about pricing configuration →](/features/pricing)
+
+### 6. Invite Your Team
+
+<Steps>
+  <Step title="Go to Team Settings">
+    Navigate to **Settings → Team**
+  </Step>
+  <Step title="Invite Members">
+    Click **Invite Member** and enter their email
+  </Step>
+  <Step title="Assign Roles">
+    Select their role: Admin, Editor, or Viewer
+  </Step>
+</Steps>
+
+| Role | Permissions |
+|------|-------------|
+| **Admin** | Full access, manage settings and users |
+| **Editor** | Create and edit records |
+| **Viewer** | Read-only access |
+
+## You're Ready!
+
+Your Buddy account is now set up. Here's what to explore next:
+
+<CardGroup cols={2}>
+  <Card title="Process Orders" icon="file-invoice" href="/features/orders">
+    Create orders manually or via email
+  </Card>
+  <Card title="Set Up Email Forwarding" icon="envelope" href="/integrations/email-forwarding">
+    Automatically create orders from PO emails
+  </Card>
+  <Card title="Understand Data Reviews" icon="clipboard-check" href="/features/data-reviews">
+    Learn how to handle items needing attention
+  </Card>
+  <Card title="Configure Warehouses" icon="warehouse" href="/features/warehouses">
+    Set up multi-location fulfillment
+  </Card>
+</CardGroup>

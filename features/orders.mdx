@@ -1,0 +1,148 @@
+---
+title: "Order Processing"
+description: "Creating and managing sales orders"
+---
+
+The Sales Orders section is your central hub for processing customer orders, from creation through fulfillment.
+
+## Viewing Orders
+
+Navigate to **Sales Orders** in the sidebar. You have two view options:
+
+<CardGroup cols={2}>
+  <Card title="Table View" icon="table">
+    Traditional list format, best for searching, filtering, and bulk operations
+  </Card>
+  <Card title="Kanban View" icon="columns">
+    Visual board with columns for each status, best for seeing your pipeline
+  </Card>
+</CardGroup>
+
+Toggle between views using the switch in the top right.
+
+## Creating an Order
+
+<Steps>
+  <Step title="Click New Order">
+    Click **New Order** in the top right
+  </Step>
+  <Step title="Select Customer">
+    Search for and select the customer. Their pricing tier applies automatically.
+  </Step>
+  <Step title="Choose Shipping Location">
+    Select which of the customer's locations to ship to
+  </Step>
+  <Step title="Add Products">
+    Search for products and enter quantities. Prices calculate based on the customer's tier.
+  </Step>
+  <Step title="Review & Save">
+    Review the order total and click **Save**
+  </Step>
+</Steps>
+
+## Order Statuses
+
+| Status | Meaning |
+|--------|---------|
+| **Draft** | Order is being created, not yet confirmed |
+| **Confirmed** | Order is finalized and ready to process |
+| **Processing** | Order is being picked and packed |
+| **Shipped** | Order has been dispatched to carrier |
+| **Delivered** | Order has reached the customer |
+| **Cancelled** | Order was cancelled |
+
+### Changing Status
+
+1. **Single order**: Open the order and select new status from dropdown
+2. **Kanban view**: Drag order card to a different column
+3. **Bulk update**: Select multiple orders and use **Update Status** action
+
+## Order Fields
+
+| Field | Description |
+|-------|-------------|
+| **PO Number** | Customer's purchase order number |
+| **Order Date** | Date the order was placed |
+| **Customer** | Customer account |
+| **Ship To** | Delivery location |
+| **Status** | Current order status |
+| **Total** | Order total amount |
+| **Notes** | Internal or customer-facing notes |
+
+## Processing POs via Email
+
+You can create orders automatically by forwarding purchase orders to Buddy.
+
+<Steps>
+  <Step title="Get Your Email Address">
+    Find your unique forwarding email in **Settings → Integrations → Email**
+  </Step>
+  <Step title="Forward PO">
+    Forward the purchase order email (with PDF, Excel, or CSV attachment)
+  </Step>
+  <Step title="Review Draft">
+    The order appears in your queue as a draft for review
+  </Step>
+  <Step title="Approve">
+    Verify the details and approve the order
+  </Step>
+</Steps>
+
+[Learn more about email forwarding →](/integrations/email-forwarding)
+
+## What to Expect
+
+When processing orders, Buddy automatically:
+
+- **Matches customers**: Identifies the customer from the PO
+- **Matches products**: Finds products by SKU, name, or description
+- **Applies pricing**: Uses the customer's tier pricing
+- **Flags issues**: Creates reviews for items needing attention
+
+Items that can't be matched confidently appear in [Data Reviews](/features/data-reviews).
+
+## Editing Orders
+
+Click any order to edit:
+- Add or remove products
+- Change quantities
+- Update shipping location
+- Modify notes
+
+Changes save automatically.
+
+<Warning>
+Orders with invoices may have limited editing to maintain accounting accuracy.
+</Warning>
+
+## Creating Invoices
+
+To create a QuickBooks invoice from an order:
+
+1. Select one or more orders
+2. Click **Create Invoice** in the actions
+3. The invoice is created in both Buddy and QuickBooks
+
+## Bulk Actions
+
+Select multiple orders to:
+- **Update Status**: Change status for all selected
+- **Create Invoices**: Generate invoices for all selected
+- **Export**: Download as CSV
+
+## Filtering Orders
+
+Use filters to find specific orders:
+- **Status**: Filter by order status
+- **Customer**: Filter by customer account
+- **Date Range**: Filter by order date
+- **Channel**: Filter by order source (manual, email, Shopify, etc.)
+
+## Order History
+
+Every order maintains a complete history:
+- Status changes with timestamps
+- Who made each change
+- Original vs. modified values
+
+View history in the order's Activity tab.

@@ -1,0 +1,117 @@
+---
+title: "Integrations Overview"
+description: "Connect your business tools to Buddy"
+---
+
+Buddy integrates with your existing business tools to keep data synchronized and reduce manual entry.
+
+## Available Integrations
+
+<CardGroup cols={2}>
+  <Card title="Shopify" icon="shopify" href="/integrations/shopify">
+    Sync products, customers, and orders from your Shopify store
+  </Card>
+  <Card title="QuickBooks" icon="calculator" href="/integrations/quickbooks">
+    Sync customers and create invoices in QuickBooks
+  </Card>
+  <Card title="Slack" icon="slack" href="/integrations/slack">
+    Receive real-time notifications in your Slack workspace
+  </Card>
+  <Card title="Email Forwarding" icon="envelope" href="/integrations/email-forwarding">
+    Create orders automatically from forwarded PO emails
+  </Card>
+</CardGroup>
+
+## Managing Integrations
+
+All integrations are managed from **Settings → Integrations**.
+
+### Connecting
+
+1. Go to **Settings → Integrations**
+2. Click **Connect** next to the integration
+3. Authorize access in the external service
+4. Initial sync begins automatically
+
+### Sync Status
+
+Each integration shows:
+- **Connected**: Integration is active and syncing
+- **Last Synced**: When data was last synchronized
+- **Sync Now**: Button to manually trigger sync
+
+### Disconnecting
+
+1. Go to **Settings → Integrations**
+2. Click **Disconnect** next to the integration
+3. Confirm disconnection
+
+<Note>
+Disconnecting an integration keeps your existing data in Buddy. It only stops future synchronization.
+</Note>
+
+## How Sync Works
+
+### Sync Frequency
+
+| Integration | Automatic Sync | Manual Sync |
+|-------------|----------------|-------------|
+| Shopify | Every few minutes | Click "Sync" |
+| QuickBooks | Every few minutes | Click "Sync" |
+| Slack | Real-time | N/A |
+| Email | Real-time | N/A |
+
+### Sync Direction
+
+| Integration | From External | To External |
+|-------------|---------------|-------------|
+| Shopify | Products, customers, orders | Product updates, customer updates |
+| QuickBooks | Customers, invoices, payments | New invoices |
+| Slack | — | Notifications |
+| Email | Incoming POs | — |
+
+## Data Conflicts
+
+When data differs between systems:
+
+1. Buddy creates a review in [Data Quality](/features/data-reviews)
+2. You choose which version to keep
+3. Changes sync back to the external system
+
+Buddy never overwrites data without your approval.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Integration shows disconnected">
+    The authorization may have expired. Click **Reconnect** to re-authorize.
+  </Accordion>
+
+  <Accordion title="Data not syncing">
+    1. Check the integration is connected (green status)
+    2. Click **Sync** to manually trigger
+    3. Check for errors in the sync log
+    4. Verify the data exists in the source system
+  </Accordion>
+
+  <Accordion title="Duplicate records appearing">
+    This may happen during initial sync. Review items in [Data Quality](/features/data-reviews) to merge duplicates.
+  </Accordion>
+</AccordionGroup>
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Connect Early" icon="plug">
+    Set up integrations during onboarding to avoid duplicate data entry
+  </Card>
+  <Card title="Monitor Sync Status" icon="eye">
+    Check integrations periodically to ensure they stay connected
+  </Card>
+  <Card title="Review Data Quality" icon="clipboard-check">
+    Check Data Quality after connecting to resolve any conflicts
+  </Card>
+  <Card title="Test Before Bulk Changes" icon="vial">
+    Make a small change first to verify sync works as expected
+  </Card>
+</CardGroup>

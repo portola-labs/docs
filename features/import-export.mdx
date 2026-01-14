@@ -1,0 +1,178 @@
+---
+title: "Import & Export"
+description: "Bulk importing and exporting data"
+---
+
+Buddy supports importing data from CSV and Excel files, and exporting your data for use in other systems.
+
+## Importing Data
+
+### Supported Formats
+
+- **CSV** (.csv): Comma-separated values
+- **Excel** (.xlsx, .xls): Microsoft Excel spreadsheets
+
+### What You Can Import
+
+| Data Type | Fields |
+|-----------|--------|
+| **Customers** | Name, email, phone, billing address, notes |
+| **Products** | Name, SKU, description, price, UPC |
+| **Customer Locations** | Customer, location name, shipping address |
+
+### Import Process
+
+<Steps>
+  <Step title="Prepare Your File">
+    Ensure your file has headers in the first row and consistent data formatting
+  </Step>
+  <Step title="Start Import">
+    Go to **Customers** or **Products** and click **Import**
+  </Step>
+  <Step title="Upload File">
+    Select your CSV or Excel file
+  </Step>
+  <Step title="Map Columns">
+    Match your spreadsheet columns to Buddy fields
+  </Step>
+  <Step title="Preview">
+    Review sample rows to verify mapping is correct
+  </Step>
+  <Step title="Import">
+    Click **Import** to process all rows
+  </Step>
+</Steps>
+
+### Column Mapping
+
+During import, you'll map your columns to Buddy fields:
+
+| Your Column | Maps To |
+|-------------|---------|
+| "Company Name" | Customer Name |
+| "Email Address" | Billing Email |
+| "SKU Number" | Product SKU |
+| "Price" | Unit Price |
+
+<Tip>
+Buddy remembers your column mappings for future imports from the same source.
+</Tip>
+
+### Handling Duplicates
+
+When importing, Buddy checks for existing records:
+
+- **Match found**: Updates the existing record with new data
+- **No match**: Creates a new record
+- **Uncertain match**: Creates a review in [Data Quality](/features/data-reviews)
+
+Matching is based on:
+- **Customers**: Email address, company name
+- **Products**: SKU, UPC code
+
+### Import Tips
+
+<CardGroup cols={2}>
+  <Card title="Clean Your Data" icon="broom">
+    Remove blank rows and fix obvious errors before importing
+  </Card>
+  <Card title="Use Consistent Formatting" icon="align-left">
+    Keep dates, phone numbers, and addresses in consistent formats
+  </Card>
+  <Card title="Start Small" icon="cube">
+    Test with a small batch first to verify mapping
+  </Card>
+  <Card title="Check for Duplicates" icon="copy">
+    Review Data Quality after importing for potential duplicates
+  </Card>
+</CardGroup>
+
+## Exporting Data
+
+### Export Process
+
+<Steps>
+  <Step title="Navigate to List">
+    Go to **Customers**, **Products**, or **Sales Orders**
+  </Step>
+  <Step title="Apply Filters">
+    Filter the list to show only records you want to export (optional)
+  </Step>
+  <Step title="Select Records">
+    Check the boxes for records to export, or use **Select All**
+  </Step>
+  <Step title="Export">
+    Click **Export** in the bulk actions bar
+  </Step>
+</Steps>
+
+### Select All Matching
+
+To export all records matching your filters:
+
+1. Apply your filters
+2. Click the checkbox in the header row
+3. Click **Select all X matching** that appears
+4. Click **Export**
+
+### Export Format
+
+Exports are CSV files containing:
+- All visible columns
+- Data formatted for spreadsheet use
+- UTF-8 encoding for international characters
+
+### What You Can Export
+
+| Data Type | Available Fields |
+|-----------|-----------------|
+| **Customers** | Name, email, phone, address, tier, status, notes |
+| **Products** | Name, SKU, description, price, status, UPC |
+| **Orders** | Order number, customer, date, status, total, items |
+| **Invoices** | Invoice number, customer, amount, status, dates |
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Import fails to process">
+    - Check file format is CSV or Excel
+    - Ensure headers are in row 1
+    - Remove any blank rows
+    - Check for special characters that may cause issues
+  </Accordion>
+
+  <Accordion title="Columns won't map correctly">
+    - Verify column names match expected fields
+    - Check for hidden characters in headers
+    - Try renaming columns to simpler names
+  </Accordion>
+
+  <Accordion title="Records creating as new instead of updating">
+    - Ensure matching fields (email, SKU) are populated
+    - Check for typos or extra spaces
+    - Verify the existing record hasn't been modified
+  </Accordion>
+
+  <Accordion title="Export missing records">
+    - Check your filters aren't excluding records
+    - Verify you selected the records before exporting
+    - Try exporting a smaller batch first
+  </Accordion>
+</AccordionGroup>
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Keep Originals" icon="copy">
+    Save a copy of your original file before importing
+  </Card>
+  <Card title="Document Sources" icon="file-lines">
+    Note where imported data came from for future reference
+  </Card>
+  <Card title="Regular Exports" icon="calendar">
+    Export data periodically as a backup
+  </Card>
+  <Card title="Review After Import" icon="magnifying-glass">
+    Check Data Quality for any issues after large imports
+  </Card>
+</CardGroup>

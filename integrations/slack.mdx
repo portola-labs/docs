@@ -1,0 +1,140 @@
+---
+title: "Slack Integration"
+description: "Receive real-time notifications in Slack"
+---
+
+Connect Slack to receive notifications about important events in Buddy without constantly checking the app.
+
+## What You Get
+
+- **New order notifications**: When orders are created
+- **Review alerts**: When items need your attention
+- **Status updates**: When orders change status
+- **Team activity**: When team members take actions
+
+## Connecting Slack
+
+<Steps>
+  <Step title="Go to Integrations">
+    Navigate to **Settings → Integrations**
+  </Step>
+  <Step title="Click Connect">
+    Click **Connect Slack**
+  </Step>
+  <Step title="Select Workspace">
+    Choose your Slack workspace
+  </Step>
+  <Step title="Select Channel">
+    Choose which channel receives notifications
+  </Step>
+  <Step title="Authorize">
+    Authorize Buddy to post to your channel
+  </Step>
+</Steps>
+
+## Notification Types
+
+### Orders
+
+| Event | Notification |
+|-------|--------------|
+| New order created | Order details with customer and total |
+| Order status changed | New status with order link |
+| Order needs attention | Alert with action required |
+
+### Data Quality
+
+| Event | Notification |
+|-------|--------------|
+| New review created | Summary of item needing review |
+| Urgent review | Highlighted alert for urgent items |
+| Review resolved | Confirmation when resolved |
+
+### Team Activity
+
+| Event | Notification |
+|-------|--------------|
+| Team member joined | Welcome message |
+| Bulk import completed | Summary of imported records |
+
+## Configuring Notifications
+
+### Choose What to Receive
+
+After connecting, configure which notifications to receive:
+
+1. Go to **Settings → Integrations → Slack**
+2. Toggle notification types on/off:
+   - New orders
+   - Order status changes
+   - Data quality reviews
+   - Team activity
+
+### Notification Frequency
+
+Choose how to receive notifications:
+- **Immediate**: Each event posts instantly
+- **Summary**: Batch notifications every hour
+- **Urgent only**: Only critical alerts
+
+## Channel Setup
+
+### Recommended Channels
+
+| Channel | Purpose |
+|---------|---------|
+| #buddy-orders | All order-related notifications |
+| #buddy-alerts | Urgent items only |
+| #buddy-general | All notifications |
+
+### Multiple Channels
+
+You can route different notification types to different channels:
+
+1. Connect Slack to your primary channel
+2. Contact support to set up additional channel routing
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Notifications not appearing">
+    1. Verify Slack is connected in Settings
+    2. Check you're in the correct channel
+    3. Verify notification types are enabled
+    4. Check Slack's notification settings for the channel
+  </Accordion>
+
+  <Accordion title="Too many notifications">
+    Adjust your notification settings:
+    1. Go to **Settings → Integrations → Slack**
+    2. Toggle off notification types you don't need
+    3. Consider using **Summary** mode instead of **Immediate**
+  </Accordion>
+
+  <Accordion title="Can't select a channel">
+    The Buddy app may not have access to private channels. Either:
+    - Use a public channel
+    - Invite the Buddy app to the private channel in Slack
+  </Accordion>
+
+  <Accordion title="Connection lost">
+    Slack tokens can expire. Go to **Settings → Integrations** and click **Reconnect**.
+  </Accordion>
+</AccordionGroup>
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Dedicated Channel" icon="hashtag">
+    Create a dedicated channel to avoid cluttering general channels
+  </Card>
+  <Card title="Configure Wisely" icon="sliders">
+    Only enable notifications you'll act on
+  </Card>
+  <Card title="Use Urgency" icon="bell">
+    Reserve urgent notifications for truly critical items
+  </Card>
+  <Card title="Review Regularly" icon="calendar">
+    Check notification settings as your team's needs change
+  </Card>
+</CardGroup>

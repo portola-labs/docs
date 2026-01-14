@@ -1,0 +1,142 @@
+---
+title: "Warehouse Management"
+description: "Setting up stock locations and fulfillment routing"
+---
+
+If you fulfill orders from multiple locations, warehouse management helps you track which customers and products are served by which location.
+
+## Why Use Warehouses?
+
+Warehouses (stock locations) help you:
+- **Route orders correctly**: Ensure orders ship from the right facility
+- **Assign customer territories**: Default customers to their nearest warehouse
+- **Manage product availability**: Track which products are stocked where
+- **Optimize fulfillment**: Reduce shipping costs and times
+
+## Setting Up Warehouses
+
+<Steps>
+  <Step title="Go to Warehouse Settings">
+    Navigate to **Settings → Warehouses**
+  </Step>
+  <Step title="Add Warehouse">
+    Click **Add Warehouse**
+  </Step>
+  <Step title="Enter Details">
+    Fill in warehouse name and address
+  </Step>
+  <Step title="Save">
+    Click **Save** to create the warehouse
+  </Step>
+</Steps>
+
+### Warehouse Fields
+
+| Field | Description |
+|-------|-------------|
+| **Name** | Display name (e.g., "East Coast DC") |
+| **Address** | Physical warehouse address |
+| **Contact** | Warehouse manager or contact |
+| **Phone** | Contact phone number |
+| **Notes** | Internal notes |
+| **Default** | Set as default for new customers |
+
+## Assigning Customers to Warehouses
+
+Each customer can have a default warehouse:
+
+<Steps>
+  <Step title="Open Customer Profile">
+    Navigate to the customer's profile
+  </Step>
+  <Step title="Find Warehouse Setting">
+    Locate the **Default Warehouse** field
+  </Step>
+  <Step title="Select Warehouse">
+    Choose which warehouse typically fulfills this customer
+  </Step>
+  <Step title="Save">
+    Click **Save** to apply
+  </Step>
+</Steps>
+
+When creating orders for this customer, the selected warehouse is used by default.
+
+## Product Warehouse Requirements
+
+Some products may need to ship from specific locations:
+
+<Steps>
+  <Step title="Open Product Details">
+    Navigate to the product's details
+  </Step>
+  <Step title="Find Required Warehouse">
+    Locate the **Required Warehouse** field
+  </Step>
+  <Step title="Select Warehouse">
+    Choose the warehouse that stocks this product
+  </Step>
+  <Step title="Save">
+    Click **Save** to apply
+  </Step>
+</Steps>
+
+Orders containing this product will route to the specified warehouse.
+
+## How Routing Works
+
+When creating an order, Buddy determines the fulfillment location:
+
+1. **Product requirement**: If any product requires a specific warehouse, use that
+2. **Customer default**: Otherwise, use the customer's default warehouse
+3. **Organization default**: If neither is set, use the organization's default
+4. **Manual selection**: You can always override when creating the order
+
+<Note>
+If products in an order require different warehouses, you may need to split the order or handle it manually.
+</Note>
+
+## Multi-Warehouse Orders
+
+For orders that span multiple warehouses:
+
+- **Split orders**: Create separate orders for each warehouse
+- **Manual override**: Select a primary warehouse and add notes
+- **Partial fulfillment**: Ship what's available and backorder the rest
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Name Clearly" icon="tag">
+    Use descriptive names like "East Coast DC" not "Warehouse 1"
+  </Card>
+  <Card title="Set Defaults" icon="check-double">
+    Configure customer defaults to reduce manual selection
+  </Card>
+  <Card title="Document Requirements" icon="file-lines">
+    Add notes explaining why products require specific warehouses
+  </Card>
+  <Card title="Review Routing" icon="route">
+    Periodically check that orders are routing correctly
+  </Card>
+</CardGroup>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="What if a customer is near multiple warehouses?">
+    Set their default to the most commonly used warehouse. You can override on individual orders when needed.
+  </Accordion>
+
+  <Accordion title="Can I track inventory by warehouse?">
+    If connected to an inventory system (Cin7, Shopify with locations), stock levels sync per location. Otherwise, warehouse management in Buddy focuses on order routing rather than inventory tracking.
+  </Accordion>
+
+  <Accordion title="How do I handle drop shipping?">
+    Create a "warehouse" for each drop ship vendor. Assign products to their respective vendor locations.
+  </Accordion>
+
+  <Accordion title="What if I only have one location?">
+    You don't need to set up warehouse management. It's optional for businesses with multiple fulfillment locations.
+  </Accordion>
+</AccordionGroup>

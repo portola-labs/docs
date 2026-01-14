@@ -1,0 +1,163 @@
+---
+title: "Customers API"
+description: "Create, read, update, and delete customers"
+---
+
+## List Customers
+
+Retrieve a paginated list of customers.
+
+```bash
+GET /v1/customers
+```
+
+### Query Parameters
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `page` | integer | Page number (default: 1) |
+| `pageSize` | integer | Results per page (default: 20, max: 100) |
+| `search` | string | Search by name or email |
+| `status` | string | Filter by status (active, inactive) |
+
+### Response
+
+```json
+{
+  "data": [
+    {
+      "id": "cust_abc123",
+      "name": "Acme Corporation",
+      "billingEmail": "billing@acme.com",
+      "billingPhone": "555-123-4567",
+      "pricingTierId": "tier_xyz789",
+      "status": "active",
+      "createdAt": "2024-01-15T10:30:00Z",
+      "updatedAt": "2024-01-20T14:22:00Z"
+    }
+  ],
+  "pagination": {
+    "page": 1,
+    "pageSize": 20,
+    "total": 150,
+    "totalPages": 8
+  }
+}
+```
+
+## Get Customer
+
+Retrieve a single customer by ID.
+
+```bash
+GET /v1/customers/:id
+```
+
+### Response
+
+```json
+{
+  "data": {
+    "id": "cust_abc123",
+    "name": "Acme Corporation",
+    "billingEmail": "billing@acme.com",
+    "billingPhone": "555-123-4567",
+    "billingAddress": {
+      "address1": "123 Main St",
+      "city": "New York",
+      "state": "NY",
+      "zipCode": "10001"
+    },
+    "pricingTierId": "tier_xyz789",
+    "status": "active",
+    "branches": [
+      {
+        "id": "branch_def456",
+        "name": "Downtown Store",
+        "shippingAddress": {
+          "address1": "456 Oak Ave",
+          "city": "New York",
+          "state": "NY",
+          "zipCode": "10002"
+        }
+      }
+    ],
+    "createdAt": "2024-01-15T10:30:00Z",
+    "updatedAt": "2024-01-20T14:22:00Z"
+  }
+}
+```
+
+## Create Customer
+
+Create a new customer.
+
+```bash
+POST /v1/customers
+```
+
+### Request Body
+
+```json
+{
+  "name": "Acme Corporation",
+  "billingEmail": "billing@acme.com",
+  "billingPhone": "555-123-4567",
+  "billingAddress": {
+    "address1": "123 Main St",
+    "city": "New York",
+    "state": "NY",
+    "zipCode": "10001"
+  },
+  "pricingTierId": "tier_xyz789"
+}
+```
+
+### Response
+
+```json
+{
+  "data": {
+    "id": "cust_abc123",
+    "name": "Acme Corporation",
+    ...
+  }
+}
+```
+
+## Update Customer
+
+Update an existing customer.
+
+```bash
+PATCH /v1/customers/:id
+```
+
+### Request Body
+
+```json
+{
+  "name": "Acme Corp",
+  "billingEmail": "newemail@acme.com"
+}
+```
+
+## Delete Customer
+
+Delete a customer. Customers with orders cannot be deleted.
+
+```bash
+DELETE /v1/customers/:id
+```
+
+### Response
+
+```json
+{
+  "success": true
+}
+```
+
+<Warning>
+Customers with existing orders cannot be deleted. Set status to "inactive" instead.
+</Warning>

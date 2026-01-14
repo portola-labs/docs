@@ -1,0 +1,165 @@
+---
+title: "QuickBooks Integration"
+description: "Sync customers and invoices with QuickBooks Online"
+---
+
+Connect QuickBooks Online to sync customer accounts and create invoices directly from Buddy.
+
+## What Syncs
+
+| Data | From QuickBooks | To QuickBooks |
+|------|-----------------|---------------|
+| **Customers** | Name, email, addresses | Customer updates |
+| **Invoices** | Invoice details, payments | New invoices from orders |
+
+## Connecting QuickBooks
+
+<Steps>
+  <Step title="Go to Integrations">
+    Navigate to **Settings → Integrations**
+  </Step>
+  <Step title="Click Connect">
+    Click **Connect QuickBooks**
+  </Step>
+  <Step title="Sign In">
+    Sign in to your Intuit account
+  </Step>
+  <Step title="Authorize">
+    Authorize Buddy to access your QuickBooks company
+  </Step>
+  <Step title="Initial Sync">
+    Return to Buddy. Your customers begin syncing.
+  </Step>
+</Steps>
+
+## Customer Sync
+
+### What Transfers
+
+From QuickBooks:
+- Customer/Company name
+- Display name
+- Email address
+- Billing address
+- Phone numbers
+
+To QuickBooks:
+- New customers created in Buddy
+- Customer updates
+
+### Customer Badges
+
+Customers synced from QuickBooks show a **QB** badge indicating:
+- QuickBooks Customer ID
+- Last sync timestamp
+
+### Matching
+
+When syncing, Buddy matches customers by:
+1. QuickBooks ID (for existing linked customers)
+2. Email address
+3. Company name
+
+Uncertain matches appear in [Data Quality](/features/data-reviews).
+
+## Invoice Sync
+
+### Creating Invoices
+
+To create a QuickBooks invoice from an order:
+
+<Steps>
+  <Step title="Select Orders">
+    Go to **Sales Orders** and select orders to invoice
+  </Step>
+  <Step title="Create Invoice">
+    Click **Create Invoice** in the actions bar
+  </Step>
+  <Step title="Confirm">
+    The invoice is created in both Buddy and QuickBooks
+  </Step>
+</Steps>
+
+### What Transfers
+
+To QuickBooks:
+- Customer reference
+- Line items with products and quantities
+- Prices and totals
+- PO number as reference
+- Due date
+
+From QuickBooks:
+- Invoice status updates
+- Payment records
+- Payment dates
+
+### Invoice Badges
+
+Invoices show a **QB** badge with:
+- QuickBooks Invoice ID
+- Sync status
+- Last sync timestamp
+
+## Sync Frequency
+
+- **Customers**: Every few minutes
+- **Invoices**: Every few minutes
+- **Payments**: Every few minutes
+
+Click **Sync** on the integration page to manually trigger a sync.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Customers not syncing">
+    1. Verify QuickBooks is connected (green status)
+    2. Click **Sync** to manually refresh
+    3. Check if customers are marked as inactive in QuickBooks
+    4. Review Data Quality for matching issues
+  </Accordion>
+
+  <Accordion title="Invoice creation failed">
+    Common causes:
+    - Customer not linked to QuickBooks
+    - Products not mapped to QuickBooks items
+    - QuickBooks session expired (reconnect)
+  </Accordion>
+
+  <Accordion title="Payment status not updating">
+    1. Verify payment is recorded in QuickBooks
+    2. Click **Sync** to refresh
+    3. Check the invoice is properly linked (has QB badge)
+  </Accordion>
+
+  <Accordion title="Duplicate customers">
+    If you imported customers before connecting, duplicates may occur. Use [Data Quality](/features/data-reviews) to merge.
+  </Accordion>
+
+  <Accordion title="Session expired">
+    QuickBooks authorization expires periodically. Go to **Settings → Integrations** and click **Reconnect**.
+  </Accordion>
+</AccordionGroup>
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Connect Early" icon="plug">
+    Connect QuickBooks during onboarding to avoid duplicate customers
+  </Card>
+  <Card title="Review Matches" icon="magnifying-glass">
+    Check Data Quality after initial sync to resolve duplicates
+  </Card>
+  <Card title="Invoice Promptly" icon="clock">
+    Create invoices soon after orders ship
+  </Card>
+  <Card title="Check Status" icon="circle-check">
+    Periodically verify the integration stays connected
+  </Card>
+</CardGroup>
+
+## Requirements
+
+- QuickBooks Online (not Desktop)
+- Admin access to your QuickBooks company
+- Active QuickBooks subscription

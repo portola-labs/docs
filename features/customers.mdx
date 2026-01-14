@@ -1,0 +1,106 @@
+---
+title: "Customer Management"
+description: "Managing customer accounts and shipping locations"
+---
+
+The Customers section is where you manage all your customer accounts, their billing information, and shipping locations.
+
+## Viewing Customers
+
+Navigate to **Customers** in the sidebar to see your customer list. You can:
+- **Search**: Find customers by name, email, or phone
+- **Filter**: By pricing tier, status, or integration source
+- **Sort**: By name, date created, or recent activity
+
+## Adding a Customer
+
+<Steps>
+  <Step title="Click New Customer">
+    Click **New Customer** in the top right
+  </Step>
+  <Step title="Enter Company Information">
+    Fill in the company name and any notes
+  </Step>
+  <Step title="Add Billing Details">
+    Enter billing address, email, and phone number
+  </Step>
+  <Step title="Assign Pricing Tier">
+    Select the appropriate pricing tier (optional)
+  </Step>
+  <Step title="Save">
+    Click **Save** to create the customer
+  </Step>
+</Steps>
+
+## Shipping Locations
+
+Most wholesale customers have multiple delivery addresses. Buddy calls these "branches" or "ship-to locations."
+
+### Adding a Location
+
+1. Open a customer's profile
+2. Click **Add Location** or the **+** button in the Locations section
+3. Enter the location name (e.g., "Downtown Store", "Warehouse B")
+4. Add the shipping address and contact information
+5. Click **Save**
+
+### Location Fields
+
+Each location can have:
+- **Name**: Descriptive name for the location
+- **Address**: Full shipping address
+- **Contact**: Person to contact for deliveries
+- **Phone**: Direct phone number
+- **Notes**: Special delivery instructions
+
+## Customer Fields
+
+| Field | Description |
+|-------|-------------|
+| **Name** | Company or business name |
+| **Billing Email** | Email for invoices and communications |
+| **Billing Phone** | Primary contact phone |
+| **Billing Address** | Address for invoices |
+| **Pricing Tier** | Determines pricing discounts |
+| **Customer Type** | Category (Wholesale, Retail, etc.) |
+| **Status** | Active or Inactive |
+| **Notes** | Internal notes about the customer |
+
+## Warning Badges
+
+Yellow badges indicate missing information:
+
+| Badge | Meaning | Action |
+|-------|---------|--------|
+| **No Email** | Billing email missing | Add email for invoicing |
+| **No Tier** | No pricing tier assigned | Assign appropriate tier |
+| **No Address** | Billing address incomplete | Complete address fields |
+
+## Integration Sync
+
+Customers from connected integrations show badges indicating their source:
+
+- **S** (Shopify): Synced from Shopify
+- **QB** (QuickBooks): Synced from QuickBooks
+- **F** (Faire): Synced from Faire
+
+Changes to these customers sync bidirectionally—updates in Buddy appear in the source system.
+
+## Bulk Actions
+
+Select multiple customers to:
+- **Export**: Download as CSV
+- **Assign Tier**: Change pricing tier for all selected
+- **Change Status**: Mark active or inactive
+
+## Deleting Customers
+
+<Warning>
+Customers with existing orders cannot be deleted. This preserves order history.
+</Warning>
+
+To remove a customer from active use, change their status to **Inactive** instead.
+
+## Importing Customers
+
+See [Import & Export](/features/import-export) for details on bulk importing customers from CSV or Excel files.

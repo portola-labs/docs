@@ -1,0 +1,155 @@
+---
+title: "Shopify Integration"
+description: "Sync products, customers, and orders with your Shopify store"
+---
+
+Connect your Shopify store to automatically sync products, customers, and orders with Buddy.
+
+## What Syncs
+
+| Data | From Shopify | To Shopify |
+|------|--------------|------------|
+| **Products** | Name, description, variants, prices, images | Price updates |
+| **Customers** | Name, email, addresses | Customer updates |
+| **Orders** | Order details, line items, status | — |
+
+## Connecting Shopify
+
+<Steps>
+  <Step title="Go to Integrations">
+    Navigate to **Settings → Integrations**
+  </Step>
+  <Step title="Click Connect">
+    Click **Connect Shopify**
+  </Step>
+  <Step title="Authorize">
+    You'll be redirected to Shopify. Log in and authorize Buddy.
+  </Step>
+  <Step title="Initial Sync">
+    Return to Buddy. Your data begins syncing automatically.
+  </Step>
+</Steps>
+
+Initial sync may take several minutes depending on your catalog size.
+
+## Product Sync
+
+### What Transfers
+
+From Shopify:
+- Product title and description
+- All variants with SKUs
+- Prices for each variant
+- Product images
+- Inventory levels (if enabled)
+
+To Shopify:
+- Price updates made in Buddy
+
+### Product Badges
+
+Products synced from Shopify show an **S** badge. Click to see:
+- Shopify Product ID
+- Shopify Variant ID
+- Last sync timestamp
+
+### Variant Mapping
+
+Shopify variants map to Buddy variants:
+
+| Shopify | Buddy |
+|---------|-------|
+| Variant Title | Variant Name |
+| SKU | SKU |
+| Price | Unit Price |
+| Barcode | UPC Code |
+
+## Customer Sync
+
+### What Transfers
+
+From Shopify:
+- Customer name and email
+- Default address
+- Additional addresses
+
+To Shopify:
+- Customer updates made in Buddy
+
+### Customer Badges
+
+Customers synced from Shopify show an **S** badge indicating:
+- Shopify Company ID (for B2B customers)
+- Shopify Customer ID
+- Last sync timestamp
+
+## Order Sync
+
+### What Transfers
+
+Orders created in Shopify appear in Buddy with:
+- Order number and date
+- Customer information
+- Line items and quantities
+- Shipping address
+- Order status
+
+<Note>
+Orders from Shopify are read-only in Buddy. Manage them in Shopify.
+</Note>
+
+### Channel Source
+
+Orders from Shopify show "Shopify" as the channel source, making it easy to filter and report on sales by channel.
+
+## Sync Frequency
+
+- **Products**: Every few minutes
+- **Customers**: Every few minutes
+- **Orders**: Near real-time via webhooks
+
+Click **Sync** on the integration page to manually trigger a sync.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Products not appearing">
+    1. Check the product is published in Shopify
+    2. Click **Sync** to manually refresh
+    3. Wait a few minutes for sync to complete
+    4. Check if the product was imported with a different name
+  </Accordion>
+
+  <Accordion title="Prices not updating">
+    Price sync to Shopify only includes changes made in Buddy. Changes made directly in Shopify sync to Buddy, not the reverse.
+  </Accordion>
+
+  <Accordion title="Duplicate products">
+    If you imported products before connecting Shopify, duplicates may occur. Use [Data Quality](/features/data-reviews) to merge records.
+  </Accordion>
+
+  <Accordion title="Missing variants">
+    Check that the variant is active in Shopify. Draft or archived variants may not sync.
+  </Accordion>
+
+  <Accordion title="Connection lost">
+    Go to **Settings → Integrations** and click **Reconnect** to re-authorize.
+  </Accordion>
+</AccordionGroup>
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Connect First" icon="plug">
+    Connect Shopify before importing data to avoid duplicates
+  </Card>
+  <Card title="Consistent SKUs" icon="barcode">
+    Use consistent SKUs across Shopify and other systems
+  </Card>
+  <Card title="Review After Sync" icon="magnifying-glass">
+    Check Data Quality after initial sync for any issues
+  </Card>
+  <Card title="Manage in Source" icon="arrow-right">
+    Make product changes in Shopify; they'll sync to Buddy
+  </Card>
+</CardGroup>

@@ -1,0 +1,185 @@
+---
+title: "Email Forwarding"
+description: "Automatically create orders from forwarded purchase orders"
+---
+
+Email forwarding lets you create orders automatically by forwarding purchase order emails to Buddy. This saves time and reduces manual data entry.
+
+## How It Works
+
+1. You receive a PO via email from a customer
+2. Forward the email to your Buddy address
+3. Buddy reads the PO and creates a draft order
+4. You review and approve the order
+
+## Setting Up
+
+<Steps>
+  <Step title="Find Your Address">
+    Go to **Settings → Integrations → Email** to find your unique forwarding address
+  </Step>
+  <Step title="Copy Address">
+    Copy the address (format: `orders@your-org.usebuddy.io`)
+  </Step>
+  <Step title="Start Forwarding">
+    Forward PO emails to this address
+  </Step>
+</Steps>
+
+<Tip>
+Add your Buddy email to your contacts to quickly forward POs.
+</Tip>
+
+## What Gets Processed
+
+### Supported Formats
+
+| Format | Description |
+|--------|-------------|
+| **PDF** | Purchase order documents |
+| **Excel** | .xlsx and .xls files |
+| **CSV** | Comma-separated data files |
+| **Email Body** | Order details in the email text |
+
+### What Buddy Extracts
+
+From the PO, Buddy identifies:
+- **Customer**: From sender email, company name, or PO header
+- **Products**: From SKUs, product names, or descriptions
+- **Quantities**: Order quantities for each item
+- **PO Number**: The customer's reference number
+- **Ship-to**: Delivery address if included
+
+## After Forwarding
+
+### What to Expect
+
+Within a few minutes:
+1. The email is processed
+2. A draft order is created
+3. The order appears in your Sales Orders queue
+4. Items needing attention appear in Data Quality
+
+### Review Process
+
+<Steps>
+  <Step title="Open the Order">
+    Find the new order in **Sales Orders** (status: Draft)
+  </Step>
+  <Step title="Verify Customer">
+    Confirm the customer was matched correctly
+  </Step>
+  <Step title="Check Products">
+    Verify all products were matched correctly
+  </Step>
+  <Step title="Review Quantities">
+    Confirm quantities match the original PO
+  </Step>
+  <Step title="Approve">
+    Change status to **Confirmed** to process
+  </Step>
+</Steps>
+
+### Handling Issues
+
+If something doesn't match:
+
+| Issue | Solution |
+|-------|----------|
+| Customer not matched | Select the correct customer from dropdown |
+| Product not matched | Search and select the correct product |
+| Wrong quantity | Edit the quantity inline |
+| Missing information | Add manually before approving |
+
+Unmatched items create reviews in [Data Quality](/features/data-reviews).
+
+## Best Practices
+
+### For Better Matching
+
+<CardGroup cols={2}>
+  <Card title="Clean Customer Data" icon="users">
+    Ensure customer emails in Buddy match how they send POs
+  </Card>
+  <Card title="Complete SKUs" icon="barcode">
+    Add alternative SKUs and aliases to products
+  </Card>
+  <Card title="Consistent Formatting" icon="align-left">
+    Ask customers to use consistent PO formats
+  </Card>
+  <Card title="Review Quickly" icon="clock">
+    Process orders promptly while context is fresh
+  </Card>
+</CardGroup>
+
+### Workflow Tips
+
+1. **Set up email rules**: Create an email rule to automatically forward POs
+2. **Dedicated inbox**: Consider a dedicated email for receiving POs
+3. **Check daily**: Review your order queue at least once daily
+4. **Train your team**: Ensure team members know how to review orders
+
+## Sharing with Customers
+
+You can give customers your Buddy email to send POs directly:
+
+**Sample message:**
+> "Please send purchase orders to orders@yourcompany.usebuddy.io and we'll process them automatically."
+
+<Note>
+Only share your forwarding address with trusted customers to avoid spam.
+</Note>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Email not processed">
+    - Check you forwarded to the correct address
+    - Verify the attachment isn't corrupted
+    - Wait a few minutes for processing
+    - Check spam filters aren't blocking forwarded emails
+  </Accordion>
+
+  <Accordion title="Customer not recognized">
+    - Add the customer's email to their profile
+    - Check for typos in the customer name
+    - The customer may need to be created first
+  </Accordion>
+
+  <Accordion title="Products not matching">
+    - Add alternative SKUs to your products
+    - Check product names match what customers use
+    - Review Data Quality for unmatched items
+  </Accordion>
+
+  <Accordion title="Missing information">
+    Some POs have incomplete data. You'll need to manually enter:
+    - Ship-to address if not included
+    - Specific product variants
+    - Special instructions
+  </Accordion>
+
+  <Accordion title="Duplicate orders">
+    Buddy checks for duplicate PO numbers. If you forward the same PO twice, check if an order already exists with that PO number.
+  </Accordion>
+</AccordionGroup>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Can customers email directly?">
+    Yes! Share your Buddy email address with trusted customers. They can send POs directly without you forwarding.
+  </Accordion>
+
+  <Accordion title="What if the PO format changes?">
+    Buddy adapts to different formats. If a customer changes their PO layout, processing should still work. Check results carefully after format changes.
+  </Accordion>
+
+  <Accordion title="Is there a size limit?">
+    Attachments up to 25MB are supported. Very large files may take longer to process.
+  </Accordion>
+
+  <Accordion title="Can I process handwritten POs?">
+    PDF scans of handwritten POs have lower accuracy. Consider asking customers for typed or digital POs when possible.
+  </Accordion>
+</AccordionGroup>

@@ -1,0 +1,155 @@
+---
+title: "Pricing Configuration"
+description: "Setting up pricing tiers and custom pricing"
+---
+
+Buddy's pricing system lets you offer different prices to different customer groups, with support for custom pricing overrides.
+
+## How Pricing Works
+
+Pricing follows a hierarchy:
+
+1. **Customer-specific price** (highest priority): Custom price for a specific customer
+2. **Tier-specific product price**: Custom price for a product within a tier
+3. **Tier discount**: Percentage discount applied to base price
+4. **Base price** (default): Standard product price
+
+## Pricing Tiers
+
+Pricing tiers let you offer automatic discounts to customer groups.
+
+### Creating a Tier
+
+<Steps>
+  <Step title="Go to Pricing Tiers">
+    Navigate to **Settings → Pricing Tiers**
+  </Step>
+  <Step title="Create New Tier">
+    Click **New Tier**
+  </Step>
+  <Step title="Configure Tier">
+    Enter name (e.g., "Wholesale") and default discount percentage
+  </Step>
+  <Step title="Save">
+    Click **Save** to create the tier
+  </Step>
+</Steps>
+
+### Example Tier Setup
+
+| Tier | Default Discount | Description |
+|------|------------------|-------------|
+| Retail | 0% | Standard pricing (base price) |
+| Wholesale | 25% | Standard wholesale customers |
+| Distributor | 40% | High-volume distributors |
+| VIP | 50% | Strategic accounts |
+
+### Assigning Customers to Tiers
+
+1. Open a customer's profile
+2. Find the **Pricing Tier** field
+3. Select the appropriate tier
+4. Save changes
+
+All orders for this customer automatically use tier pricing.
+
+## Product-Level Tier Pricing
+
+Override the tier discount for specific products:
+
+<Steps>
+  <Step title="Go to Pricing Tiers">
+    Navigate to **Settings → Pricing Tiers**
+  </Step>
+  <Step title="Select a Tier">
+    Click on the tier you want to configure
+  </Step>
+  <Step title="Find the Product">
+    Search for the product to customize
+  </Step>
+  <Step title="Set Custom Price">
+    Enter a specific price instead of using the percentage discount
+  </Step>
+  <Step title="Save">
+    Click **Save** to apply
+  </Step>
+</Steps>
+
+**Example**: Your Wholesale tier has a 25% discount, but for Product A you want to offer it at exactly $10.00 regardless of the base price.
+
+## Customer-Specific Pricing
+
+For negotiated or contract pricing with individual customers:
+
+<Steps>
+  <Step title="Open Customer Profile">
+    Navigate to the customer's profile
+  </Step>
+  <Step title="Go to Pricing Tab">
+    Click the **Pricing** tab
+  </Step>
+  <Step title="Add Custom Price">
+    Click **Add Custom Price** and select a product
+  </Step>
+  <Step title="Enter Price">
+    Enter the specific price for this customer
+  </Step>
+  <Step title="Save">
+    Click **Save** to apply
+  </Step>
+</Steps>
+
+Customer-specific prices override all tier pricing.
+
+## Price Calculation Example
+
+| Customer | Product Base Price | Tier | Tier Discount | Custom Price | Final Price |
+|----------|-------------------|------|---------------|--------------|-------------|
+| Acme Corp | $100 | Wholesale | 25% | — | $75 |
+| Best Buy | $100 | Distributor | 40% | — | $60 |
+| Special Co | $100 | Wholesale | 25% | $70 (custom) | $70 |
+
+## Viewing the Price Matrix
+
+To see all pricing at a glance:
+
+1. Navigate to **Settings → Pricing Tiers**
+2. Use the matrix view to see prices across all tiers
+3. Identify gaps or inconsistencies
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Name Tiers Clearly" icon="tag">
+    Use descriptive names that match your sales terminology
+  </Card>
+  <Card title="Document Exceptions" icon="file-lines">
+    Add notes when setting custom prices explaining why
+  </Card>
+  <Card title="Review Regularly" icon="calendar-check">
+    Periodically audit custom pricing for consistency
+  </Card>
+  <Card title="Start Simple" icon="layer-group">
+    Begin with 2-3 tiers and add more only if needed
+  </Card>
+</CardGroup>
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Can a customer be in multiple tiers?">
+    No, each customer is assigned to one tier. Use customer-specific pricing for exceptions.
+  </Accordion>
+
+  <Accordion title="What if a customer has no tier assigned?">
+    They receive base pricing (no discount) until assigned to a tier.
+  </Accordion>
+
+  <Accordion title="How do I handle volume discounts?">
+    Use unit levels (Each, Pack, Case, Pallet) with different prices, or create separate tiers for volume buyers.
+  </Accordion>
+
+  <Accordion title="Can pricing sync with Shopify or QuickBooks?">
+    Base prices sync with integrations. Tier pricing is Buddy-specific and applied on top of synced prices.
+  </Accordion>
+</AccordionGroup>

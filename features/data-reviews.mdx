@@ -1,0 +1,204 @@
+---
+title: "Data Reviews"
+description: "Understanding and resolving items that need your attention"
+---
+
+Data Reviews are items that Buddy has flagged for your attention. They help ensure data quality and accuracy across your customers, products, and orders.
+
+## Where to Find Reviews
+
+Navigate to **Data Quality** in the sidebar to see all pending reviews. You can filter by:
+- **Entity type**: Customers, Products, Orders, Line Items
+- **Review type**: Duplicates, matches, data quality issues
+- **Priority**: Urgent, High, Normal, Low
+- **Status**: Pending, In Progress, Approved, Rejected
+
+## Review Types
+
+### Matching Reviews
+
+These reviews relate to how Buddy matches incoming data to your existing records.
+
+<AccordionGroup>
+  <Accordion title="Match" icon="check">
+    **What it means**: Buddy found a confident match between incoming data and an existing record.
+
+    **When it appears**: During PO processing or data imports when a customer or product is identified with high confidence.
+
+    **What to do**: Review and approve if correct, or select a different match if needed.
+  </Accordion>
+
+  <Accordion title="Low Confidence Match" icon="question">
+    **What it means**: Buddy found a potential match but isn't certain it's correct.
+
+    **When it appears**: When incoming data partially matches existing records (e.g., similar but not identical names).
+
+    **What to do**: Review both records carefully. Approve if they're the same, or dismiss and select the correct match.
+
+    **Example**: An incoming PO has "Acme Corp" but your database has "Acme Corporation" and "Acme Co LLC"
+  </Accordion>
+
+  <Accordion title="New Unmatched" icon="plus">
+    **What it means**: Buddy couldn't find any matching record in your database.
+
+    **When it appears**: When a customer or product in an incoming order doesn't match anything in your system.
+
+    **What to do**:
+    - Search for the record manually (it may exist under a different name)
+    - Create a new record if it's genuinely new
+    - Link to an existing record if you find it
+  </Accordion>
+
+  <Accordion title="Duplicate" icon="copy">
+    **What it means**: Buddy detected two records that appear to be the same entity.
+
+    **When it appears**: During imports, integration syncs, or periodic data quality scans.
+
+    **What to do**: Compare both records side by side. Choose to merge them (combining into one) or dismiss if they're legitimately different.
+  </Accordion>
+</AccordionGroup>
+
+### Line Item Reviews
+
+These reviews are specific to order line items (products in an order).
+
+<AccordionGroup>
+  <Accordion title="Line Item Match" icon="link">
+    **What it means**: A product in an incoming PO was matched to a product in your catalog.
+
+    **When it appears**: During email PO processing when products are identified.
+
+    **What to do**: Verify the match is correct and approve, or select a different product.
+  </Accordion>
+
+  <Accordion title="Line Item Unmatched" icon="unlink">
+    **What it means**: A product in an incoming PO couldn't be matched to your catalog.
+
+    **When it appears**: When the PO contains a product code or description that doesn't match any of your products.
+
+    **What to do**:
+    - Search your catalog to find the correct product
+    - Create a new product if it's not in your system
+    - Update your product with additional SKUs or aliases for future matching
+  </Accordion>
+</AccordionGroup>
+
+### Data Quality Reviews
+
+These reviews flag potential issues with your data.
+
+<AccordionGroup>
+  <Accordion title="Missing Field" icon="triangle-exclamation">
+    **What it means**: A record is missing important information.
+
+    **When it appears**: When required fields are empty (e.g., customer missing billing email).
+
+    **What to do**: Open the record and fill in the missing information.
+
+    **Common missing fields**:
+    - Customer billing email (needed for invoices)
+    - Product SKU (needed for order processing)
+    - Shipping address (needed for fulfillment)
+  </Accordion>
+
+  <Accordion title="Data Conflict" icon="code-branch">
+    **What it means**: Data differs between Buddy and a connected system.
+
+    **When it appears**: When synced data doesn't match (e.g., different prices in Shopify vs Buddy).
+
+    **What to do**: Review both versions and choose which to keep, or update both systems to match.
+  </Accordion>
+
+  <Accordion title="Price Anomaly" icon="chart-line">
+    **What it means**: An unusual price was detected that may be an error.
+
+    **When it appears**: When a price is significantly different from historical prices or appears to be a typo.
+
+    **What to do**: Verify the price is correct. If it's an error, correct it. If it's intentional (e.g., a sale), dismiss the review.
+  </Accordion>
+</AccordionGroup>
+
+## Review Priority Levels
+
+Reviews are assigned priority levels to help you focus on what's most important:
+
+| Priority | Meaning | Example |
+|----------|---------|---------|
+| **Urgent** | Requires immediate attention | Order blocked from processing |
+| **High** | Should be resolved soon | Customer missing from order |
+| **Normal** | Standard review item | Potential duplicate detected |
+| **Low** | Can be addressed when convenient | Minor data quality suggestion |
+
+## Resolving Reviews
+
+### Approve
+Confirms the suggested action (e.g., the match is correct). The review is marked complete.
+
+### Reject
+Indicates the suggestion is incorrect. You'll typically need to provide the correct information.
+
+### Merge
+For duplicate reviews, combines two records into one. You choose which data to keep for each field.
+
+### Link
+Connects an unmatched item to an existing record you've identified.
+
+### Skip
+Temporarily sets aside a review to address later. Use this when you need more information.
+
+### Dismiss
+Closes the review without action because it's not actually an issue (e.g., two customers with the same name that are different companies).
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Review Regularly" icon="calendar">
+    Check Data Quality daily to prevent backlogs
+  </Card>
+  <Card title="Prioritize Urgent Items" icon="fire">
+    Urgent reviews may block order processing
+  </Card>
+  <Card title="Use Filters" icon="filter">
+    Focus on one review type at a time for efficiency
+  </Card>
+  <Card title="Train Your Team" icon="users">
+    Ensure everyone knows how to handle reviews
+  </Card>
+</CardGroup>
+
+## Reducing Future Reviews
+
+To minimize the number of reviews:
+
+1. **Maintain clean data**: Keep customer names and product SKUs consistent
+2. **Add aliases**: Add alternative SKUs and names to products for better matching
+3. **Update records promptly**: When you learn a customer's official name, update it
+4. **Use integrations**: Connected systems reduce manual data entry errors
+
+## FAQ
+
+<AccordionGroup>
+  <Accordion title="Why am I seeing so many reviews?">
+    Reviews typically increase after:
+    - Initial data import (duplicates detected)
+    - Connecting a new integration (data conflicts)
+    - Processing POs from new customers
+
+    The number decreases as you resolve items and Buddy learns your preferences.
+  </Accordion>
+
+  <Accordion title="Can I bulk resolve reviews?">
+    Yes, select multiple reviews using checkboxes and use bulk actions to approve, skip, or dismiss them together.
+  </Accordion>
+
+  <Accordion title="What happens if I ignore reviews?">
+    Pending reviews don't block most operations, but:
+    - Urgent reviews may prevent order processing
+    - Unresolved duplicates can cause confusion
+    - Missing data may cause invoice or fulfillment issues
+  </Accordion>
+
+  <Accordion title="How does Buddy learn from my decisions?">
+    When you approve matches or merge duplicates, Buddy uses this feedback to improve future matching accuracy. The more you use the system, the better it gets.
+  </Accordion>
+</AccordionGroup>

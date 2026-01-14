@@ -1,0 +1,131 @@
+---
+title: "Invoices"
+description: "Managing invoices and QuickBooks synchronization"
+---
+
+The Invoices section shows all invoices synced from QuickBooks, allowing you to track payment status and download PDFs.
+
+## Viewing Invoices
+
+Navigate to **Invoices** in the sidebar. You can:
+- **Search**: By invoice number, customer name, or PO number
+- **Filter**: By status, date range, or customer
+- **Sort**: By date, amount, or status
+
+## Invoice Statuses
+
+| Status | Meaning |
+|--------|---------|
+| **Open** | Invoice sent, awaiting payment |
+| **Paid** | Payment received in full |
+| **Partially Paid** | Partial payment received |
+| **Overdue** | Payment past due date |
+| **Voided** | Invoice cancelled |
+
+## Creating Invoices
+
+Invoices are created from sales orders:
+
+<Steps>
+  <Step title="Select Orders">
+    Go to **Sales Orders** and select one or more orders to invoice
+  </Step>
+  <Step title="Create Invoice">
+    Click **Create Invoice** in the actions bar
+  </Step>
+  <Step title="Review">
+    The invoice is created in both Buddy and QuickBooks
+  </Step>
+</Steps>
+
+<Note>
+QuickBooks must be connected to create invoices. Go to **Settings → Integrations** to connect.
+</Note>
+
+## Downloading PDFs
+
+To download an invoice as PDF:
+
+1. Find the invoice in the list
+2. Click the download icon on the row
+3. The PDF opens or downloads to your device
+
+PDFs match the format in QuickBooks.
+
+## QuickBooks Synchronization
+
+### What Syncs
+
+| From QuickBooks | To QuickBooks |
+|-----------------|---------------|
+| Invoice details | New invoices from orders |
+| Payment status | — |
+| Customer payments | — |
+| Voided invoices | — |
+
+### Sync Frequency
+
+- **Automatic**: Every few minutes
+- **Manual**: Click **Sync** to refresh immediately
+
+### Troubleshooting Sync Issues
+
+<AccordionGroup>
+  <Accordion title="Invoice not appearing">
+    1. Check that QuickBooks is connected in Settings
+    2. Click **Sync** to manually refresh
+    3. Verify the invoice was saved in QuickBooks
+    4. Wait a few minutes for sync to complete
+  </Accordion>
+
+  <Accordion title="Status not updating">
+    Payment status syncs from QuickBooks. If a payment was recorded:
+    1. Verify the payment is saved in QuickBooks
+    2. Click **Sync** to refresh
+    3. Status should update within minutes
+  </Accordion>
+
+  <Accordion title="Customer mismatch">
+    If the invoice shows the wrong customer:
+    1. Check customer mapping in QuickBooks integration settings
+    2. Ensure the customer exists in both systems
+    3. Review Data Quality for any customer matching issues
+  </Accordion>
+</AccordionGroup>
+
+## Invoice Fields
+
+| Field | Description |
+|-------|-------------|
+| **Invoice Number** | Unique invoice identifier |
+| **Customer** | Customer account |
+| **Date** | Invoice date |
+| **Due Date** | Payment due date |
+| **Amount** | Total invoice amount |
+| **Balance** | Remaining amount due |
+| **Status** | Payment status |
+| **PO Number** | Related purchase order number |
+
+## Linked Records
+
+Each invoice shows its connections:
+- **Customer**: Click to view customer profile
+- **Sales Order**: Click to view the original order
+- **QuickBooks**: External ID for reference
+
+## Best Practices
+
+<CardGroup cols={2}>
+  <Card title="Invoice Promptly" icon="clock">
+    Create invoices soon after orders ship
+  </Card>
+  <Card title="Verify Before Creating" icon="check">
+    Review order details before invoicing
+  </Card>
+  <Card title="Monitor Overdue" icon="bell">
+    Filter by Overdue status regularly
+  </Card>
+  <Card title="Keep Connected" icon="link">
+    Ensure QuickBooks stays connected for accurate sync
+  </Card>
+</CardGroup>
